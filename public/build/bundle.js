@@ -24,6 +24,14 @@ var app = (function () {
     function safe_not_equal(a, b) {
         return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
     }
+    let src_url_equal_anchor;
+    function src_url_equal(element_src, url) {
+        if (!src_url_equal_anchor) {
+            src_url_equal_anchor = document.createElement('a');
+        }
+        src_url_equal_anchor.href = url;
+        return element_src === src_url_equal_anchor.href;
+    }
     function is_empty(obj) {
         return Object.keys(obj).length === 0;
     }
@@ -476,6 +484,8 @@ var app = (function () {
     	let header;
     	let div3;
     	let div0;
+    	let img;
+    	let img_src_value;
     	let t0;
     	let div1;
     	let span0;
@@ -494,6 +504,7 @@ var app = (function () {
     			header = element("header");
     			div3 = element("div");
     			div0 = element("div");
+    			img = element("img");
     			t0 = space();
     			div1 = element("div");
     			span0 = element("span");
@@ -508,30 +519,34 @@ var app = (function () {
     			t6 = space();
     			span3 = element("span");
     			span3.textContent = "Contact";
+    			if (!src_url_equal(img.src, img_src_value = "./Arcane-logo.png")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "height", "80");
+    			attr_dev(img, "width", "80");
+    			add_location(img, file$7, 67, 16, 2600);
     			attr_dev(div0, "class", "logo");
     			add_location(div0, file$7, 66, 12, 2565);
     			attr_dev(span0, "class", "text-cyan-400 font-semibold cursor-pointer");
     			attr_dev(span0, "data-target", "home");
     			set_style(span0, "font-family", "'Poppins', sans-serif");
-    			add_location(span0, file$7, 71, 16, 2746);
+    			add_location(span0, file$7, 71, 16, 2729);
     			attr_dev(div1, "class", "flex-grow");
-    			add_location(div1, file$7, 70, 12, 2706);
+    			add_location(div1, file$7, 70, 12, 2689);
     			attr_dev(span1, "class", "text-cyan-400 mx-4 cursor-pointer");
     			attr_dev(span1, "data-target", "about");
     			set_style(span1, "font-family", "'Poppins', sans-serif");
-    			add_location(span1, file$7, 74, 16, 2981);
+    			add_location(span1, file$7, 74, 16, 2964);
     			attr_dev(span2, "class", "text-cyan-400 mx-4 cursor-pointer");
     			attr_dev(span2, "data-target", "services");
     			set_style(span2, "font-family", "'Poppins', sans-serif");
-    			add_location(span2, file$7, 75, 16, 3142);
+    			add_location(span2, file$7, 75, 16, 3125);
     			attr_dev(span3, "class", "text-cyan-400 mx-4 cursor-pointer");
     			attr_dev(span3, "data-target", "contact");
     			set_style(span3, "font-family", "'Poppins', sans-serif");
-    			add_location(span3, file$7, 76, 16, 3309);
+    			add_location(span3, file$7, 76, 16, 3292);
     			attr_dev(div2, "class", "flex");
-    			add_location(div2, file$7, 73, 12, 2946);
+    			add_location(div2, file$7, 73, 12, 2929);
     			attr_dev(div3, "id", "menu-bar");
-    			attr_dev(div3, "class", "menu-bar bg-gray-800 w-full h-12 flex items-center px-4 svelte-rxaago");
+    			attr_dev(div3, "class", "menu-bar bg-gray-800 w-full h-20 flex items-center px-4 svelte-rxaago");
     			add_location(div3, file$7, 65, 8, 2469);
     			add_location(header, file$7, 64, 4, 2452);
     		},
@@ -542,6 +557,7 @@ var app = (function () {
     			insert_dev(target, header, anchor);
     			append_dev(header, div3);
     			append_dev(div3, div0);
+    			append_dev(div0, img);
     			append_dev(div3, t0);
     			append_dev(div3, div1);
     			append_dev(div1, span0);

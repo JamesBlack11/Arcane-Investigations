@@ -63,9 +63,9 @@
     </style>
 
     <header>
-        <div id="menu-bar" class="menu-bar bg-gray-800 w-full h-12 flex items-center px-4">
+        <div id="menu-bar" class="menu-bar bg-gray-800 w-full h-20 flex items-center px-4">
             <div class="logo">
-<!--                <img src="../public/Arcane-logo.png" height="100" width="100"/>-->
+                <img src="./Arcane-logo.png" height="80" width="80"/>
 
                </div>
             <div class="flex-grow">
